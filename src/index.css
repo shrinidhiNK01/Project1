@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-cyan: #00f2ff;
+  --color-brand-cyan-dim: #00a8b3;
+  --color-brand-purple: #9d05ff;
+  --color-brand-purple-dim: #5c0099;
+  --color-brand-green: #00ffaa;
+  
+  --animate-scanline: scan 16s linear infinite;
+  --animate-pulse-slow: pulseGlow 5s ease-in-out infinite alternate;
+  --animate-grid-shift: gridShift 60s linear infinite;
+  
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+  @keyframes pulseGlow {
+    0% { opacity: 0.5; filter: drop-shadow(0 0 1px rgba(0, 242, 255, 0.1)); }
+    100% { opacity: 1; filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.4)); }
+  }
+  @keyframes gridShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 80px; }
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 7, 10, 0.82);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(116, 245, 255, 0.15);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(116, 245, 255, 0.35);
+}
+
+/* Atmospheric grid overlay */
+.high-tech-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(116, 245, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(116, 245, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(13, 21, 21, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(116, 245, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(116, 245, 255, 0.16);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.03);
+}
+
+/* Hologram Scanning Lines */
+.scan-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
+  position: absolute;
+  top: 0;
+  animation: hologramScan 10s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes hologramScan {
+  0% { top: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Glowing text effects */
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 8px rgba(157, 5, 255, 0.4);
+}
+
+.glow-border-cyan {
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.12);
+}
+
+.glow-border-purple {
+  box-shadow: 0 0 15px rgba(157, 5, 255, 0.12);
+}

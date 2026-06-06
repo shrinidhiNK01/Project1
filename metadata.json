@@ -1,0 +1,6 @@
+{
+  "name": "OMNISYNC AI",
+  "description": "The Autonomous AI Workforce for Modern Enterprises. An immersive multi-agent intelligence network, featuring real-time collaborative boardroom debate operations, predictive business simulation models, and semantic enterprise memory systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
